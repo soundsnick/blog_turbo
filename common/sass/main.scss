@@ -1,0 +1,236 @@
+$theme-color: #2196f3;
+$theme-color-2: rgb(78, 162, 177);
+$theme-color-3: rgb(11, 141, 145);
+$transition: 0.2s;
+*{
+    text-decoration: none;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+body{
+    font-family: Gotham Pro;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+.flex{
+    display: flex;
+}
+.container{
+    max-width: 800px; 
+    margin: auto;
+    position: relative;
+    padding: 0 15px;
+}
+.header{
+    box-shadow: 0 1px 5px rgba(0,0,0,0.04);
+    background: #FFF;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+}
+.logo{
+    margin: 0;
+    line-height: 60px;
+    font-size: 1.5em;
+    color: #282828;
+}
+.header__links{
+    flex: 1;
+    text-align: right;
+    line-height: 60px;
+}
+.header__link{
+    font-weight: 300;
+    color: $theme-color-3;
+    display: inline-block;
+    transition: color $transition, transform $transition;
+    will-change: color, transform;
+    &:hover{
+        color: $theme-color;
+    }
+}
+.main{
+    margin-top: 60px;
+}
+.post{
+    padding-bottom: 20px;
+    &:hover{
+        .post__title{
+            color: $theme-color-3;
+        }
+    }
+}
+.post__title{
+    font-size: 1.3em;
+    color: rgba(0, 0, 0, 0.7);
+    margin-bottom: 7px;
+    margin-top: 0;
+    font-weight: 400;
+    cursor: pointer;
+    &.big{
+        font-size: 1.6em;
+    }
+}
+.post__content{
+    line-height: 1.5;
+    color: rgba(0, 0, 0, 0.7);
+    font-family: inherit;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-weight: 200;
+    font-size: 16px;
+    margin: 0;
+}
+.post__date{
+    margin: 10px 0px;
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 300;
+    color: rgba(0,0,0,0.4);
+}
+.post__share{
+    display: inline-block;
+    font-size: 12px;
+    margin-left: 5px;
+    color: rgba(0,0,0,0.6);
+    transition: color $transition;
+    will-change: color;
+    cursor: pointer;
+    &:hover{
+        color: $theme-color-3;
+    }
+}
+.social{
+    padding: 15px 0;
+    background: #f8f8f8;
+    position: relative;
+    z-index: 2;
+}
+.content{
+    position: relative;
+    &.active{
+        .feed{
+            transform: translateX(-100%);
+        }
+    }
+    &--wrapper{
+        display: flex;
+    }
+}
+.feed{
+    background: #FFF;
+    padding-top: 20px;
+    z-index: 1;
+    position: relative;
+    transition: transform 0.5s;
+}
+.post__view{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: auto;
+    background: #FFF;
+    z-index: 0;
+    .post__share{
+        font-size: 16px;
+        margin: 20px 0;
+    }
+    .post__title{
+        cursor: text;
+        margin-top: 30px;
+    }
+    &--back{
+        position: fixed;
+        top: 0;
+        left: 0;
+        padding: 20px 30px;
+        height: 100vh;
+        cursor: pointer;
+        line-height: 100vh;
+        font-size: 35px;
+        color: rgba(0,0,0,0.3);
+        transition: background $transition;
+        &:hover{
+            background: rgba(0,0,0,0.05);
+        }
+        &__text{
+            font-size: .6em;
+            margin-left: 15px;
+            vertical-align: middle;
+            margin-top: -5px;
+            display: none;
+        }
+    }
+}
+.footer{
+    background: rgba(0,0,0,.05);
+    padding: 15px 0;
+    text-align: center;
+    font-size: 13px;
+    font-family: Open Sans;
+    font-weight: 500;
+    position: relative;
+    z-index: -2;
+    color: rgba(0,0,0,0.5);
+    text-shadow: 0 1px 1px rgba(255,255,255,0.8);
+}
+.share-modal{
+    position: fixed;
+    display: none;
+    bottom: 0;
+    width: 100%;
+    background: #FFF;
+    padding: 10px 0;
+    padding-bottom: 20px;
+    box-shadow: 0 -2px 8px rgba(0,0,0,0.1);
+    z-index: 999;
+}
+.share-shade{
+    position: fixed;
+    height: 100vh;
+    background: rgba(0,0,0,0.6);
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 998;
+    display: none;
+}
+.share__title{
+    margin: 0;
+    margin-bottom: 10px;
+    line-height: 26px;
+    font-weight: 300;
+    color: rgba(0,0,0,.7);
+    text-align: right;
+}
+.share__buttons{
+    display: flex;
+}
+.share__button{
+    width: 32px;
+    height: 35px;
+    margin-right: 5px;
+    a{
+        display: block;
+    }
+}
+.share__button img{
+    height: 100%;
+    width: 100%;
+    border-radius: 2px;
+}
+.signature{
+    margin-top: 10px;
+    display: block;
+    font-style: italic;
+    color: $theme-color-3;
+    text-align: right;
+    font-weight: 200;
+}
+.who{
+    font-size: 30px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}

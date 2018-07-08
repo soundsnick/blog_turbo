@@ -1,0 +1,14 @@
+@media only screen and (max-width: 1000px){
+    .post__view--back{
+        position: static;
+        background: rgba(0,0,0,0.01);
+        height: auto;
+        line-height: initial;
+    }
+    .post__view--back:hover{
+        background: rgba(0,0,0,0.01);
+    }
+    .post__view--back__text{
+        display: inline-block;
+    }
+}
